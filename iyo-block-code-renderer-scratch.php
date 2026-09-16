@@ -3,11 +3,13 @@
 Plugin Name: Iyo Block Code Renderer for Scratch
 Plugin URI: https://github.com/kazweda/iyo-block-code-renderer-scratch
 Description: Visualize Scratch Code
-Version: 1.1.6
+Version: 1.1.7
 Author: Kazuaki Ueda
 Author URI: https://netplan.co.jp/
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: iyo-block-code-renderer-scratch
+Domain Path: /languages
 */
 
 if ( ! defined( 'ABSPATH' ) ) {

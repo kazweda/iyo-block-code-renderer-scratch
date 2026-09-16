@@ -4,7 +4,7 @@ Tags: scratch, education, code, block, coderdojo
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +47,15 @@ Rendering happens entirely in the visitor's browser via JavaScript; no server-si
 
 Please use the [GitHub issue tracker](https://github.com/kazweda/iyo-block-code-renderer-scratch/issues) for bug reports and feature requests.
 
+= I installed this plugin manually from GitHub before it was renamed. Will it auto-update? =
+
+The plugin (and its slug) was renamed from `iyo-scratch-blocks` ("Iyo Scratch Blocks") to `iyo-block-code-renderer-scratch` ("Iyo Block Code Renderer for Scratch"). WordPress core's automatic-update mechanism matches plugins by slug, so a copy installed manually under the old slug will **not** be picked up as an update to this listing. If you installed the old version manually, deactivate and delete it, then install "Iyo Block Code Renderer for Scratch" fresh from the WordPress.org directory (or via the "Add Plugins" screen) to get automatic updates going forward.
+
 == Changelog ==
+
+= 1.1.7 =
+* Add `Text Domain` and `Domain Path` headers and a `languages/` directory with a generated `.pot` file, enabling translation of the plugin listing via translate.wordpress.org.
+* Add a FAQ entry about migrating from the pre-rename GitHub install to get automatic updates.
 
 = 1.1.6 =
 * Rename the plugin to "Iyo Block Code Renderer for Scratch" (and slug to iyo-block-code-renderer-scratch) to avoid implying affiliation with the Scratch trademark.
