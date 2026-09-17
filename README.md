@@ -4,13 +4,20 @@ WordPress Plugin for Visualizing Scratch Codes
 ## Usage
 Write Scratch codes within `class="scratchblocks"`.
 ```php
-<div class="scratchblocks">
+<code class="scratchblocks">
 ...
-</div>
+</code>
 ```
 
 ## Notice
-Please change `<` or `>` to `&lt;` or `&gt;` manually.
+- Please change `<` or `>` to `&lt;` or `&gt;` manually.
+- Use `<code>` (or `<pre>`), not `<div>`. WordPress's `wptexturize` filter rewrites plain-text
+  characters like a hyphen surrounded by spaces (` - `) into a dash character (e.g. an en dash),
+  and it only skips content inside `<pre>`, `<code>`, `<kbd>`, `<style>`, `<script>`, and `<tt>`
+  tags. A `<div>` is not exempt, so operators such as `-` can get silently corrupted before
+  scratchblocks ever parses them, making the block render as an unrecognized ("obsolete", red)
+  block instead of the intended operator block. See
+  [issue #8](https://github.com/kazweda/iyo-block-code-renderer-scratch/issues/8).
 
 ## Releasing
 
