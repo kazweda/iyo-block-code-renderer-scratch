@@ -26,19 +26,14 @@ This plugin bundles the scratchblocks JavaScript library (MIT License, Copyright
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Add a `scratchblocks` class element to your content and write Scratch pseudocode inside it:
 
-`<code class="scratchblocks">
-when green flag clicked
-say [Hello!]
-</code>`
+        <code class="scratchblocks">
+        when green flag clicked
+        say [Hello!]
+        </code>
 
 Note: Manually escape `<` and `>` characters (e.g. `&lt;` and `&gt;`) inside the block.
 
-Note: Use `<code>` (or `<pre>`), not `<div>`. WordPress's `wptexturize` filter can rewrite plain
-punctuation such as a hyphen surrounded by spaces (` - `) into a dash character before the page is
-sent to the browser, and it only leaves the contents of `<pre>`, `<code>`, `<kbd>`, `<style>`,
-`<script>`, and `<tt>` tags untouched. If the block is inside a `<div>`, an operator like `-` can
-be silently corrupted, which makes scratchblocks render it as an unrecognized block (shown in red)
-instead of the intended operator block.
+Note: Use `<code>` (or `<pre>`), not `<div>`. WordPress's `wptexturize` filter can rewrite plain punctuation such as a hyphen surrounded by spaces (` - `) into a dash character before the page is sent to the browser, and it only leaves the contents of `<pre>`, `<code>`, `<kbd>`, `<style>`, `<script>`, and `<tt>` tags untouched. If the block is inside a `<div>`, an operator like `-` can be silently corrupted, which makes scratchblocks render it as an unrecognized block (shown in red) instead of the intended operator block.
 
 == Frequently Asked Questions ==
 
@@ -46,13 +41,9 @@ instead of the intended operator block.
 
 Currently English (`en`) and Japanese (`ja`) are enabled.
 
-= Why does an operator like `-` sometimes render in red instead of its normal color? =
+= Why does an operator like "-" sometimes render in red instead of its normal color? =
 
-This usually means the character reaching the browser is not a plain ASCII hyphen. WordPress's
-`wptexturize` filter can rewrite a hyphen surrounded by spaces into a dash character, and it only
-skips this rewriting inside `<pre>`, `<code>`, `<kbd>`, `<style>`, `<script>`, and `<tt>` tags.
-Write your Scratch pseudocode inside `<code class="scratchblocks">...</code>` (or
-`<pre class="scratchblocks">...</pre>`) rather than a `<div>` to avoid this.
+This usually means the character reaching the browser is not a plain ASCII hyphen. WordPress's `wptexturize` filter can rewrite a hyphen surrounded by spaces into a dash character, and it only skips this rewriting inside `<pre>`, `<code>`, `<kbd>`, `<style>`, `<script>`, and `<tt>` tags. Write your Scratch pseudocode inside a `<code class="scratchblocks">` element (or a `<pre class="scratchblocks">` element) rather than a `<div>` to avoid this.
 
 = Where does the rendering happen? =
 
