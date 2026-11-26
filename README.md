@@ -32,11 +32,11 @@ Write Scratch codes within `class="scratchblocks"`.
    ```sh
    gh release create vX.Y.Z --title "vX.Y.Z" --notes "..."
    ```
-5. Build the distributable zip in a clean staging directory, including only the files needed at runtime (`iyo-block-code-renderer-scratch.php`, `readme.txt`, `LICENSE`, `assets/`) — excluding development-only files such as `composer.json`, `composer.lock`, `vendor/`, and `.git`:
+5. Build the distributable zip in a clean staging directory, including only the files needed at runtime (`iyo-block-code-renderer-scratch.php`, `readme.txt`, `LICENSE`, `assets/`, `languages/`) — excluding development-only files such as `composer.json`, `composer.lock`, `vendor/`, and `.git`:
    ```sh
    mkdir -p /tmp/build/iyo-block-code-renderer-scratch
    cp iyo-block-code-renderer-scratch.php readme.txt LICENSE /tmp/build/iyo-block-code-renderer-scratch/
-   cp -R assets /tmp/build/iyo-block-code-renderer-scratch/
+   cp -R assets languages /tmp/build/iyo-block-code-renderer-scratch/
    cd /tmp/build && zip -r -X iyo-block-code-renderer-scratch-X.Y.Z.zip iyo-block-code-renderer-scratch -x "*.DS_Store"
    ```
 6. Attach the zip to the GitHub release as a binary asset (do not commit build zips into the repository):
